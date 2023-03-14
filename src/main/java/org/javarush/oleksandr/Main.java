@@ -1,9 +1,7 @@
 package org.javarush.oleksandr;
 
-import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.core.config.Configurator;
 import org.javarush.oleksandr.IO.FileService;
 import org.javarush.oleksandr.cipher.Caesar;
 import org.javarush.oleksandr.constants.Constants;
@@ -41,7 +39,7 @@ public class Main {
 
     }
     public static void cliStart() {
-        Console.setColor(Console.color.BLUE);
+//        Console.setColor(Console.color.BLUE);
         System.out.println("Select command: ");
         System.out.println("[1] Encode");
         System.out.println("[2] Decode");
