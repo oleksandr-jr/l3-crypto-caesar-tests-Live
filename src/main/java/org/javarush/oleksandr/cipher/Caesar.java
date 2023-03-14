@@ -1,0 +1,44 @@
+package org.javarush.oleksandr.cipher;
+
+import java.util.ArrayList;
+
+public class Caesar implements Cipher{
+    private final ArrayList<Character> alphabet;
+
+    public Caesar(ArrayList<Character> alphabet){
+        this.alphabet = alphabet;
+    }
+
+    @Override
+    public String encrypt(String text, int shiftKey) {
+        StringBuilder resultText = new StringBuilder();
+
+        for (Character c : text.toCharArray()) {
+            if(alphabet.contains(Character.toLowerCase(c))){
+                resultText.append(shiftChar(c, shiftKey));
+            }else {
+                resultText.append(c);
+            }
+        }
+        return resultText.toString();
+    }
+
+    @Override
+    public String decrypt(String text, int shiftKey) {
+        int key = (alphabet.size() - shiftKey) % (alphabet.size());
+        return encrypt(text, key);
+    }
+
+    private Character shiftChar(Character character, int key){
+        char lowerChar = (Character.toLowerCase(character));
+
+        int index = (alphabet.indexOf(lowerChar) + key) % (alphabet.size());
+
+        if (Character.isUpperCase(character)){
+            return Character.toUpperCase(alphabet.get(index));
+        } else {
+            return alphabet.get(index);
+        }
+    }
+
+}
