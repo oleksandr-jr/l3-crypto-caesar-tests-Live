@@ -25,7 +25,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: Package
-          path: logs/app.log
+          path: target/*.jar
 
 #  Artifacts:
 #
