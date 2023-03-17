@@ -20,7 +20,7 @@
             </PatternLayout>
         </File>
 
-        <RollingFile name="RollingFile" fileName="target/logs/rolling/app.log"
+        <RollingFile name="RollingFile" fileName="logs/rolling/app.log"
                      filePattern="logs/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.gz">
             <PatternLayout>
                 <Pattern>%d %p %c{1.} [%t] %m%n</Pattern>
