@@ -13,7 +13,7 @@
       %message%n"/>
         </Console>
 
-        <File name="MyFile" fileName="logs/app.log">
+        <File name="MyFile" fileName="target/logs/app.log">
             <ThresholdFilter level="INFO" onMatch="ACCEPT" onMismatch="DENY"/>
             <PatternLayout>
                 <Pattern>%d %p %c{1.} [%t] %m%n</Pattern>
