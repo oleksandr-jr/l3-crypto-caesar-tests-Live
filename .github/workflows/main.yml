@@ -21,8 +21,10 @@ jobs:
       - name: Build project with Maven
         run: mvn -B package --file pom.xml
 
-      - name: Get logs
+      - name: copy logs
         run: mkdir staging && cp logs/ staging
+
+      - name: Get logs
         uses: actions/upload-artifact@v3
         with:
           name: Package
