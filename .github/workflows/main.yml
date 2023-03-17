@@ -32,7 +32,7 @@ jobs:
             java-version: '17'
             distribution: 'temurin'
         - run: mvn --batch-mode --update-snapshots verify
-        - run: mkdir staging && cp test/ staging
+        - run: mkdir staging && cp logs/ staging
         - uses: actions/upload-artifact@v3
           with:
             name: Package
