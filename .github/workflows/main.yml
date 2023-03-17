@@ -22,7 +22,7 @@ jobs:
         run: mvn -B package --file pom.xml
 
       - name: copy logs
-        run: mkdir staging && cp logs staging
+        run: mkdir staging && cp -R logs/ staging
 
       - name: Get logs
         uses: actions/upload-artifact@v3
