@@ -13,7 +13,7 @@
       %message%n"/>
         </Console>
 
-        <File name="MyFile" fileName="target/logs/app.log">
+        <File name="MyFile" fileName="logs/app.log">
             <ThresholdFilter level="FATAL" onMatch="ACCEPT" onMismatch="DENY"/>
             <PatternLayout>
                 <Pattern>%d %p %c{1.} [%t] %m%n</Pattern>
@@ -41,8 +41,5 @@
             <AppenderRef ref="MyFile"/>
         </Root>
 
-        <Logger name="myLogger" level="debug">
-            <AppenderRef ref="Console"/>
-        </Logger>
     </Loggers>
 </Configuration>
