@@ -1,8 +1,14 @@
 package org.javarush.oleksandr.cipher;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.javarush.oleksandr.Main;
+
 import java.util.ArrayList;
 
 public class Caesar implements Cipher{
+
+    private static final Logger log = LogManager.getLogger(Caesar.class);
     private final ArrayList<Character> alphabet;
 
     public Caesar(ArrayList<Character> alphabet){
@@ -11,6 +17,7 @@ public class Caesar implements Cipher{
 
     @Override
     public String encrypt(String text, int shiftKey) {
+        log.info("encrypt");
         StringBuilder resultText = new StringBuilder();
 
         for (Character c : text.toCharArray()) {
@@ -25,6 +32,7 @@ public class Caesar implements Cipher{
 
     @Override
     public String decrypt(String text, int shiftKey) {
+        log.info("decrypt");
         int key = (alphabet.size() - shiftKey) % (alphabet.size());
         return encrypt(text, key);
     }
