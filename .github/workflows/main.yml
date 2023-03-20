@@ -19,7 +19,8 @@ jobs:
           java-version: 17
 
       #Cache
-      - uses: actions/cache@v1
+      - name: Cache local Maven repository
+        uses: actions/cache@v3
         with:
           path: ~/.m2/repository
           key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
@@ -39,7 +40,7 @@ jobs:
           path: staging
 
       - name: Show logs
-        run: cat logs/app.log
+        run: for fn in *; do printf "\n:::::: File -> $fn \n"; cat "$fn"; done
 
 #  Artifacts:
 #
