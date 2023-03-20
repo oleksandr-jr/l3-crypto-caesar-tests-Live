@@ -7,7 +7,7 @@
 
 
         <Console name="ConsoleAppender2" target="SYSTEM_OUT">
-            <TimeFilter start="05:00:00" end="23:30:00" onMatch="ACCEPT" onMismatch="DENY"/>
+<!--            <TimeFilter start="05:00:00" end="23:30:00" onMatch="ACCEPT" onMismatch="DENY"/>-->
             <PatternLayout pattern="%style{%date{DEFAULT}}{yellow}
       %highlight{%-5level}{FATAL=bg_red, ERROR=red, WARN=yellow, INFO=green}
       %message%n"/>
@@ -36,7 +36,7 @@
     </Appenders>
 
     <Loggers>
-        <Root level="debug">
+        <Root level="trace">
             <AppenderRef ref="ConsoleAppender2"/>
             <AppenderRef ref="MyFile"/>
         </Root>

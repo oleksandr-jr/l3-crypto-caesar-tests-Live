@@ -1,4 +1,4 @@
-name: Java CI with Maven
+name: Java CI with Maven TEST
 
 on:
   push:
@@ -29,6 +29,9 @@ jobs:
         with:
           name: Package
           path: staging
+
+      - name: Show logs
+        run: cat staging/hippodrome.log
 
 #  Artifacts:
 #
