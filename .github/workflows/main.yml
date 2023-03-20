@@ -39,7 +39,7 @@ jobs:
           path: staging
 
       - name: Show logs
-        run: cat staging/app.log
+        run: cat logs/app.log
 
 #  Artifacts:
 #
